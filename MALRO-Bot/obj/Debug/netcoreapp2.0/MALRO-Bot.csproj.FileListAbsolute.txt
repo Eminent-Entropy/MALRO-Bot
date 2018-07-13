@@ -1,0 +1,11 @@
+C:\Users\gerbster\Documents\Visual Studio 2017\Projects\MALRO-Bot\MALRO-Bot\bin\Debug\netcoreapp2.0\MALRO-Bot.deps.json
+C:\Users\gerbster\Documents\Visual Studio 2017\Projects\MALRO-Bot\MALRO-Bot\bin\Debug\netcoreapp2.0\MALRO-Bot.runtimeconfig.json
+C:\Users\gerbster\Documents\Visual Studio 2017\Projects\MALRO-Bot\MALRO-Bot\bin\Debug\netcoreapp2.0\MALRO-Bot.runtimeconfig.dev.json
+C:\Users\gerbster\Documents\Visual Studio 2017\Projects\MALRO-Bot\MALRO-Bot\bin\Debug\netcoreapp2.0\MALRO-Bot.dll
+C:\Users\gerbster\Documents\Visual Studio 2017\Projects\MALRO-Bot\MALRO-Bot\obj\Debug\netcoreapp2.0\MALRO-Bot.csprojResolveAssemblyReference.cache
+C:\Users\gerbster\Documents\Visual Studio 2017\Projects\MALRO-Bot\MALRO-Bot\obj\Debug\netcoreapp2.0\MALRO-Bot.csproj.CoreCompileInputs.cache
+C:\Users\gerbster\Documents\Visual Studio 2017\Projects\MALRO-Bot\MALRO-Bot\obj\Debug\netcoreapp2.0\MALRO-Bot.AssemblyInfoInputs.cache
+C:\Users\gerbster\Documents\Visual Studio 2017\Projects\MALRO-Bot\MALRO-Bot\obj\Debug\netcoreapp2.0\MALRO-Bot.AssemblyInfo.cs
+C:\Users\gerbster\Documents\Visual Studio 2017\Projects\MALRO-Bot\MALRO-Bot\bin\Debug\netcoreapp2.0\MALRO-Bot.pdb
+C:\Users\gerbster\Documents\Visual Studio 2017\Projects\MALRO-Bot\MALRO-Bot\obj\Debug\netcoreapp2.0\MALRO-Bot.dll
+C:\Users\gerbster\Documents\Visual Studio 2017\Projects\MALRO-Bot\MALRO-Bot\obj\Debug\netcoreapp2.0\MALRO-Bot.pdb
