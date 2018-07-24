@@ -8,7 +8,6 @@ using Microsoft.Extensions.DependencyInjection;
 using System.IO;
 using System.Linq;
 using System.Collections.Generic;
-using OAuth2;
 
 public class Program
 {
@@ -30,11 +29,13 @@ public class Program
     {
         client = new DiscordSocketClient();
         commands = new CommandService();
-        string token = "redacted";
+        string token = "NDY3MjEwOTMwMjg0MDAzMzQy.DinTnA.TH7Crl6mGC6f2ti0KhgQ3UNCAzA";
         //client.UserJoined += AnnounceJoinedUser; //Check if userjoined
         client.UserLeft += AnnounceUserLeft;
         services = new ServiceCollection()
                 .BuildServiceProvider();
+
+        
 
         await InstallCommands();
 
@@ -101,8 +102,7 @@ public class Program
 
     public async Task killCheck()
     {
-        //WebRequest request = WebRequest.Create("https://esi.tech.ccp.is/latest/wars/");
-        
+           
     }
 }
 
@@ -124,6 +124,12 @@ public class Commands : ModuleBase
     public async Task ping()
     {
         await Context.User.SendMessageAsync("pong");
+    }
+
+    [Command("help")]
+    public async Task help()
+    {
+        await Context.Channel.SendMessageAsync("List of commands: ");
     }
 
     /**
@@ -308,6 +314,9 @@ public class Commands : ModuleBase
             await channel.SendMessageAsync("User has not requested a transfer");
     }
 
+    /**
+     * Gives current eve time (utc)
+     */ 
     [Command("evetime")]
     public async Task evetime()
     {
@@ -321,6 +330,9 @@ public class Commands : ModuleBase
         await Context.Channel.SendMessageAsync("It is " + utcTime + " in eve time");
     }
 
+    /**
+     * give current eve time in x amount of time
+     */ 
     [Command("evetime")]
     public async Task evetimeCount(int time, string type)
     {
@@ -350,6 +362,9 @@ public class Commands : ModuleBase
         }
     }
 
+    /**
+     * gives time to daily server downtime or uptime
+     */ 
     [Command("dt")]
     public async Task dt()
     {
@@ -386,4 +401,48 @@ public class Commands : ModuleBase
             
         }
     }
+
+    [Command("8")]
+    public async Task eightBall([Remainder]string question)
+    {
+        if (question[question.Length - 1].ToString() == "?")
+        {
+            Random rnd = new Random();
+            int outNum = rnd.Next(20);
+            string output = "";
+
+            switch (outNum)
+            {
+                case 0: output = " It is certain."; break;
+                case 1: output = " It is decidedly so"; break;
+                case 2: output = "Without a doubt"; break;
+                case 3: output = "Yes - definitely."; break;
+                case 4: output = "You may rely on it."; break;
+                case 5: output = "As I see it, yes."; break;
+                case 6: output = "Most likely."; break;
+                case 7: output = "Yes"; break;
+                case 8: output = "Outlook good."; break;
+                case 9: output = "Very doubtful."; break;
+                case 10: output = "Signs point to yes."; break;
+                case 11: output = "Reply hazy, try again"; break;
+                case 12: output = "Ask again later"; break;
+                case 13: output = "Better not tell you now."; break;
+                case 14: output = "Cannot predict now."; break;
+                case 15: output = "Concentrate and ask again."; break;
+                case 16: output = "Don't count on it."; break;
+                case 17: output = "My reply is no."; break;
+                case 18: output = "My sources say no"; break;
+                case 19: output = "Outlook not so good"; break;
+            }
+            await Context.Channel.SendMessageAsync(output);
+        }
+        else await Context.Channel.SendMessageAsync("That doesn't look like a question");
+
+    }
+
+    /*[Command("coffee")]
+    public async Task coffee()
+    {
+        await Context.Channel.SendMessageAsync("What the fuck did you just fucking say about me, you little bitch? Ill have you know I graduated top of my class in the Navy Seals, and Ive been involved in numerous secret raids on Al-Quaeda, and I have over 300 confirmed kills. I am trained in gorilla warfare and Im the top sniper in the entire US armed forces. You are nothing to me but just another target. I will wipe you the fuck out with precision the likes of which has never been seen before on this Earth, mark my fucking words. You think you can get away with saying that shit to me over the Internet? Think again, fucker. As we speak I am contacting my secret network of spies across the USA and your IP is being traced right now so you better prepare for the storm, maggot. The storm that wipes out the pathetic little thing you call your life. Youre fucking dead, kid. I can be anywhere, anytime, and I can kill you in over seven hundred ways, and thats just with my bare hands. Not only am I extensively trained in unarmed combat, but I have access to the entire arsenal of the United States Marine Corps and I will use it to its full extent to wipe your miserable ass off the face of the continent, you little shit. If only you could have known what unholy retribution your little clever comment was about to bring down upon you, maybe you would have held your fucking tongue. But you couldnt, you didn't, and now youre paying the price, you goddamn idiot. I will shit fury all over you and you will drown in it. You're fucking dead, kiddo.");
+    }*/
 }

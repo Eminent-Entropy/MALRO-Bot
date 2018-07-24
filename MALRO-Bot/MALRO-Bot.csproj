@@ -7,7 +7,6 @@
 
   <ItemGroup>
     <PackageReference Include="Discord.Net" Version="1.0.2" />
-    <PackageReference Include="OAuth2" Version="0.8.40" />
   </ItemGroup>
 
 </Project>
